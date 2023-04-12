@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8wr-Qd-Q1V">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vegetable List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VegetableSearchController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fKY-Hx-V6E">
+                                <rect key="frame" x="0.0" y="165" width="393" height="653"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Yzh-mi-s4X" rowHeight="200" style="IBUITableViewCellStyleDefault" id="ygt-OH-WQ3">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ygt-OH-WQ3" id="cIB-Kg-WIP">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yzh-mi-s4X">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pwp-1C-MLK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="R3n-G6-QkG"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJs-St-o2q">
+                                <rect key="frame" x="16" y="103" width="361" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sjc-2P-cwe"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="sYu-DJ-qs0"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cJs-St-o2q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HaW-m6-ej1"/>
+                            <constraint firstItem="cJs-St-o2q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cUZ-km-GMt"/>
+                            <constraint firstItem="fKY-Hx-V6E" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eZq-zv-i7x"/>
+                            <constraint firstItem="fKY-Hx-V6E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hg8-iN-vqN"/>
+                            <constraint firstItem="cJs-St-o2q" firstAttribute="centerX" secondItem="fKY-Hx-V6E" secondAttribute="centerX" id="o6U-yx-JKi"/>
+                            <constraint firstItem="fKY-Hx-V6E" firstAttribute="top" secondItem="cJs-St-o2q" secondAttribute="bottom" constant="18" id="uTc-XK-tZD"/>
+                            <constraint firstItem="cJs-St-o2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wNR-n5-jot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vegetable List" id="YbB-ZB-yFu"/>
+                    <connections>
+                        <outlet property="MyUITableView" destination="fKY-Hx-V6E" id="0g9-Gx-6DH"/>
+                        <outlet property="vegUISearchBar" destination="cJs-St-o2q" id="Hvt-af-3Kn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843.51145038167931" y="3.5211267605633805"/>
+        </scene>
+        <!--Vegetable Info View Controller-->
+        <scene sceneID="SIq-aq-thA">
+            <objects>
+                <viewController storyboardIdentifier="VegetableInfoViewController" id="bdi-Na-3rp" customClass="VegetableInfoViewController" customModule="VegetableSearchController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BmP-mr-Y4x">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wn1-5k-z4v">
+                                <rect key="frame" x="0.0" y="153" width="393" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="xpM-gF-G7q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discription" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kns-zO-KNg">
+                                <rect key="frame" x="16" y="453" width="361" height="385"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetable Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3I-Ll-Yep">
+                                <rect key="frame" x="32" y="59" width="329" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="4EB-LG-t0E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uTP-Qb-yt6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wn1-5k-z4v" firstAttribute="leading" secondItem="uTP-Qb-yt6" secondAttribute="leading" id="EMt-OV-xdK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kns-zO-KNg" secondAttribute="bottom" constant="-20" id="Noh-B1-ZaE"/>
+                            <constraint firstItem="kns-zO-KNg" firstAttribute="leading" secondItem="BmP-mr-Y4x" secondAttribute="leadingMargin" id="PCz-8v-qws"/>
+                            <constraint firstItem="wn1-5k-z4v" firstAttribute="top" secondItem="d3I-Ll-Yep" secondAttribute="bottom" constant="40" id="TVI-1y-UVY"/>
+                            <constraint firstItem="d3I-Ll-Yep" firstAttribute="top" secondItem="uTP-Qb-yt6" secondAttribute="top" id="UEt-GD-abF"/>
+                            <constraint firstItem="kns-zO-KNg" firstAttribute="top" secondItem="wn1-5k-z4v" secondAttribute="bottom" constant="50" id="dNF-OC-NfV"/>
+                            <constraint firstItem="d3I-Ll-Yep" firstAttribute="leading" secondItem="uTP-Qb-yt6" secondAttribute="leading" constant="32" id="eat-IP-QSO"/>
+                            <constraint firstItem="kns-zO-KNg" firstAttribute="trailing" secondItem="BmP-mr-Y4x" secondAttribute="trailingMargin" id="f97-ml-Emo"/>
+                            <constraint firstItem="wn1-5k-z4v" firstAttribute="centerX" secondItem="kns-zO-KNg" secondAttribute="centerX" id="jmt-uu-O4x"/>
+                            <constraint firstItem="d3I-Ll-Yep" firstAttribute="centerX" secondItem="wn1-5k-z4v" secondAttribute="centerX" id="z1G-vH-wpc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="vegetableDiscriptionUILabel" destination="kns-zO-KNg" id="yYZ-gx-nTA"/>
+                        <outlet property="vegetableNameUILabel" destination="d3I-Ll-Yep" id="Ij6-Sd-3Z8"/>
+                        <outlet property="vegetableUIImageView" destination="wn1-5k-z4v" id="4xN-MW-tVe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEJ-g7-wEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577.8625954198474" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RsC-pX-aMB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8wr-Qd-Q1V" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1At-GQ-Lgw">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mem-s5-u4X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxs-o4-uUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55.725190839694655" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
